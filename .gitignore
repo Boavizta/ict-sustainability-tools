@@ -1,0 +1,12 @@
+# virtual env
+/venv
+
+# virtual env
+/csv/geocoding_temp
+
+# Python cache
+__pycache__
+*/__pycache__
+
+# vs code
+.vscode

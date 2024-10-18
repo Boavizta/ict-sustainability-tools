@@ -1,0 +1,22 @@
+name: frictionless
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  # Validate the example project-list
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Validate data
+        uses: frictionlessdata/repository@v2
+        with:
+          resources: old-examples/project-list/project-list.resources.yaml
