@@ -1,0 +1,29 @@
+name: Validate data
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'dev'
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - 'main'
+      - 'dev'
+
+jobs:
+    validate:
+        name: Validate data set
+        runs-on: ubuntu-latest
+        steps:
+          - name: Check out the repo
+            uses: actions/checkout@v4
+          - name: Run the validation
+            uses: addnab/docker-run-action@v3
+            with:
+                image: ghcr.io/demeringo/csv-validator-docker-image:0.0.1
+                options: -v ${{ github.workspace }}/ictst/data:/data
+                run: |
+                    ./qsv validate /data/tools.csv
+                    frictionless validate /data/tools.resources.yaml
