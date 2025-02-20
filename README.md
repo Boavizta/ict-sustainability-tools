@@ -5,7 +5,6 @@ This project aims at providing a **vendor-neutral**, **fact-based**, **non-judgm
 > [!CAUTION]
 > Today, data contained in this repository is not validated nor reviewed. It is likely that the data contains false assumptions. It is here as sample data for the sole purpose of development and testing of the model. It should NOT be used for any other purpose.
 
-
 - [🗺️ Boavizta Green IT tools landscape](#️-boavizta-green-it-tools-landscape)
   - [Getting started 🚀: visualize the data](#getting-started--visualize-the-data)
   - [User manual](#user-manual)
