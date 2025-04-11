@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" type="image/png" href="https://boavizta.org/media/site/57f4e71d87-1701710300/500x500-196x.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="https://boavizta.org/media/site/57f4e71d87-1701710300/500x500-96x.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="https://boavizta.org/media/site/57f4e71d87-1701710300/500x500-32x.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="https://boavizta.org/media/site/57f4e71d87-1701710300/500x500-16x.png" sizes="16x16" />
+  <meta name="msapplication-TileImage" content="https://boavizta.org/media/site/57f4e71d87-1701710300/500x500-150x.png" />
+  <title>Boavizta - Mapping of the ICT Sustainability Tools Landscape</title>
+</head>
+
+<body style="background-color: white; padding: 1em;">
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  
+  <div style="background-color: white; margin: 1em;">
+
+    <!-- DATAMI - contribute with GIT ...but without minding it-->
+    <!-- An open source widget coded with 🤍  by the tech cooperative multi : https://multi.coop -->
+
+    <!-- DATAMI WIDGET'S HTML BLOCK-->
+    <datami-multi-files
+      title="Boavizta - Green IT tools landscape"
+      options='{
+        "display": "horizontal"
+      }'
+      gitfiles='[
+      {
+        "title": "About",
+        "activate": true,
+        "default-tab": false,
+        "localdev": false,
+        "gitfilelocal": "http://localhost:8800/statics/ictst/texts/about.md",
+        "gitfile": "https://github.com/Boavizta/ict-sustainability-tools/blob/main/ictst/texts/about.md",
+        "onlypreview": true,
+        "usertoken": ""
+      },
+      {
+        "title": "Data dictionary",
+        "activate": true,
+        "default-tab": false,
+        "localdev": false,
+        "gitfilelocal": "http://localhost:8800/statics/ictst/texts/data-dictionary.md",
+        "gitfile": "https://github.com/Boavizta/ict-sustainability-tools/blob/main/ictst/texts/data-dictionary.md",
+        "onlypreview": true,
+        "usertoken": ""
+      },
+       {
+        "title": "Validation Process",
+        "activate": true,
+        "default-tab": false,
+        "localdev": false,
+        "gitfilelocal": "http://localhost:8800/statics/ictst/texts/validation-process.md",
+        "gitfile": "https://github.com/Boavizta/ict-sustainability-tools/blob/main/ictst/texts/validation-process.md",
+        "onlypreview": true,
+        "usertoken": ""
+      },
+      {
+        "title": "Tools landscape",
+        "activate": true,
+        "localdev": false,
+        "gitfilelocal": "http://localhost:8800/statics/ictst/data/tools.csv",
+        "gitfile": "https://github.com/Boavizta/ict-sustainability-tools/blob/main/ictst/data/tools.csv",
+        "default-tab": true,
+        "options": {
+          "height": "500px",
+          "separator": ",",
+          "lockcolumns": true,
+          "customfilters": {
+            "activate": true,
+            "filterfields": [
+              {
+                "name": "assessment_type",
+                "filtering": "OR"
+              },
+              {
+                "name": "environmental_indicator",
+                "filtering": "OR"
+              },
+              {
+                "name": "assessed_functional_unit",
+                "filtering": "OR"
+              },
+              {
+                "name": "methodology_transparency",
+                "filtering": "OR"
+              },
+              {
+                "name": "focus",
+                "filtering": "OR"
+              },
+              {
+                "name": "status",
+                "filtering": "OR"
+              },
+              {
+                "name": "licence",
+                "filtering": "OR"
+              }
+            ]
+          },
+          "schema": {
+            "localdev": false,
+            "filelocal": "http://localhost:8800/statics/ictst/model/tools.frictionless-table-schema.json",
+            "file": "https://github.com/Boavizta/ict-sustainability-tools/blob/main/ictst/model/tools.frictionless-table-schema.json"
+          },
+          "fields-custom-properties": {
+            "localdev": false,
+            "filelocal": "http://localhost:8800/statics/ictst/widget/tools.fields-custom-properties.json",
+            "file": "https://github.com/Boavizta/ict-sustainability-tools/blob/main/ictst/widget/tools.fields-custom-properties.json"
+          },
+          "cardsview": {
+            "activate": true,
+            "default": true
+          },
+          "cardsdetail": true,
+          "cardssettings": {
+            "mini": {
+              "tool_name": {
+                "position": "title"
+              },
+              "organization": {
+                "position": "resume",
+                "prefix": "Organization : "
+              },
+              "logo": {
+                "position": "image"
+              },
+              "quick_description": {
+                "position": "resume"
+              },
+              "website": {
+                "position": "links"
+              },
+              "status": {
+                "position": "tags",
+                "block_title": "Boavizta processing status"
+              }
+            },
+            "detail": {
+              "tool_name": {
+                "position": "title"
+              },
+              "logo": {
+                "position": "image"
+              },
+              "organization": {
+                "position": "resume",
+                "prefix": "Organization : "
+              },
+              "quick_description": {
+                "position": "resume"
+              },
+              "website": {
+                "position": "links",
+                "block_title": "website"
+              },
+              "status": {
+                "position": "tags",
+                "block_title": "Boavizta processing status"
+              },
+              "environmental_indicator": {
+                "position": "tags",
+                "block_title": "environmental_indicator",
+                "right": false
+              },
+              "assessment_type": {
+                "position": "tags",
+                "block_title": "assessment_type",
+                "right": false
+              },
+              "main_perimeter": {
+                "position": "tags",
+                "block_title": "main_perimeter",
+                "right": false
+              },
+              "licence": {
+                "position": "tags",
+                "block_title": "licence",
+                "right": false
+              },
+              "other_perimeters": {
+                "position": "tags",
+                "block_title": "other_perimeters",
+                "right": true
+              },
+              "assessed_functional_unit": {
+                "position": "tags",
+                "block_title": "assessed_functional_unit",
+                "right": true
+              },
+              "data_entry_points": {
+                "position": "tags",
+                "block_title": "data_entry_points",
+                "right": true
+              },
+              "life_cycle_steps": {
+                "position": "tags",
+                "block_title": "life_cycle_steps",
+                "right": true
+              },
+              "ghg_scope": {
+                "position": "tags",
+                "block_title": "ghg_scope",
+                "right": true
+              },
+              "focus": {
+                "position": "tags",
+                "block_title": "focus",
+                "right": false
+              },
+              "self_hostable": {
+                "position": "tags",
+                "block_title": "self_hostable",
+                "right": true
+              },
+              "originating_country": {
+                "position": "tags",
+                "block_title": "originating_country",
+                "right": true
+              },
+              "inside_models": {
+                "position": "tags",
+                "block_title": "inside_models",
+                "right": true
+              },
+              "methodology_transparency": {
+                "position": "tags",
+                "block_title": "methodology_transparency",
+                "right": true
+              },
+              "ref_sources": {
+                "block_title": "sources",
+                "position": "links_top",
+                "right": true
+              },
+              "Creator_comment": {
+                "block_title": "Creator comments",
+                "position": "tags",
+                "right": true
+              },
+              "review_1_explanation": {
+                "block_title": "Review 1 comments",
+                "position": "tags",
+                "right": true
+              },
+              "review_2_explanation": {
+                "block_title": "Review 2 comments",
+                "position": "tags",
+                "right": true
+              }
+
+            }
+          }
+        },
+        "usertoken": ""
+      }
+    ]'
+      locale="en"
+    ></datami-multi-files>
+
+    <!-- DATAMI WIDGET'S APP.JS SCRIPT -->
+    <script src="https://datami-widget.multi.coop/js/app.js" type="text/javascript" defer></script>
+    <!-- <script src="http://localhost:8080/js/app.js" type="text/javascript" defer></script> -->
+
+  </div>
+</body>
+
+</html>

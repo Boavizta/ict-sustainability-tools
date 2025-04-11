@@ -1,0 +1,26 @@
+name: Publish the index.html to Github pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish-doc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy GitHub Pages
+        run: |
+          # This assumes that the page to deploy is named index.html and is at the root of the repository.
+          # We also need a branch named `gh-pages`.
+          # It will contain the index.html page to display but it's history will be reset with each deployment.
+          git worktree add gh-pages
+          git config user.name "Deploy from CI"
+          git config user.email ""
+          cd gh-pages
+          # Delete the ref to avoid keeping history.
+          git update-ref -d refs/heads/gh-pages
+          rm -rf *
+          mv ../index.html .
+          git add .
+          git commit -m "Deploy $GITHUB_SHA to gh-pages"
+          git push --force --set-upstream origin gh-pages
