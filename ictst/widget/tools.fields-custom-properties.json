@@ -24,7 +24,11 @@
     },
     {
       "name": "quick_description",
-      "subtype": "longtext"
+      "subtype": "longtext",
+      "longtextOptions": {
+        "breakSeparator": "||",
+        "bulletSeparator": "- "
+      }
     },
     {
       "name": "assessment_type",

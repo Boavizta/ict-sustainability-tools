@@ -1,0 +1,27 @@
+name: Replace break with separator
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    paths:
+      - '**/tools.csv'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Replace break in fields enclosed by "" by separator defined for datami
+        run: |
+          python post_process_data.py
+          # Note: the following account information will not work on GHES
+          git config user.name "github-actions[bot]"
+          git add .
+          git commit -m "remove new line and replace with ||"
+          git push
